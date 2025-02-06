@@ -1,4 +1,4 @@
-import Link from "next/link"
+
 import ProductCard from "@/components/ProductCard"
 import type { Product } from "@/types/product"
 import { useLocalStorage } from "usehooks-ts";
@@ -8,7 +8,7 @@ interface SuggestionsProps {
 }
 
 export default function Suggestions({ suggestions }: SuggestionsProps) {
-  const [value, setValue, removeValue] = useLocalStorage<{product:Product,count:number}[]>("cart", []);
+  const [value, setValue] = useLocalStorage<{product:Product,count:number}[]>("cart", []);
   const handleAddToCart = (product: Product) => {
     // Implement your add to cart logic here
     console.log("Added to cart:", product)

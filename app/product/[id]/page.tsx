@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { useParams, notFound, useRouter } from "next/navigation";
 import Image from "next/image";
-import ProductCard from "@/components/ProductCard";
 import Suggestions from "@/components/Suggestions";
 import type { Product } from "@/types/product";
 import { ArrowLeft } from "lucide-react";

@@ -26,7 +26,7 @@ export default function ProductList({ initialProducts }: ProductListProps) {
     setSearchQuery(e.target.value)
   }, [])
 
-  const [value, setValue, removeValue] = useLocalStorage<{ product: Product; count: number }[]>("cart", [])
+  const [value, setValue] = useLocalStorage<{ product: Product; count: number }[]>("cart", [])
   const handleAddToCart = (product: Product) => {
     const cart = value || []
     const existingProduct = cart.find((p) => p.product.id === product.id)
