@@ -1,18 +1,12 @@
 import ProductList from "@/components/ProductList"
+import { getProducts } from "@/lib/data"
 import type { Product } from "@/types/product"
 
-async function getProducts(): Promise<Product[]> {
-  const res = await fetch(`${"http://localhost:3001"}/products`, { cache: "no-store" })
-  if (!res.ok) {
-    console.error("Failed to fetch products:", await res.text())
-    throw new Error("Failed to fetch products")
-  }
-  return res.json()
-}
 
-export default async function Home() {
+
+export default  function Home() {
   try {
-    const products = await getProducts()
+    const products =  getProducts()
     return (
       <main className="container mx-auto p-4">
         <h1 className="text-3xl font-bold mb-4">Our Menu</h1>

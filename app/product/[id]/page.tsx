@@ -7,29 +7,9 @@ import Suggestions from "@/components/Suggestions";
 import type { Product } from "@/types/product";
 import { ArrowLeft } from "lucide-react";
 import { useLocalStorage } from "usehooks-ts";
+import { getProductById, getProductsByCategory } from "@/lib/data";
 
-async function getProduct(id: string): Promise<Product> {
-	const res = await fetch(`${"http://localhost:3001"}/products/${id}`, {
-		cache: "no-store",
-	});
-	if (!res.ok) {
-		console.error("Failed to fetch product:", await res.text());
-		notFound();
-	}
-	return res.json();
-}
 
-async function getSuggestions(category: string): Promise<Product[]> {
-	const res = await fetch(
-		`${"http://localhost:3001"}/products?category=${category}`,
-		{ cache: "no-store" },
-	);
-	if (!res.ok) {
-		console.error("Failed to fetch suggestions:", await res.text());
-		return [];
-	}
-	return res.json();
-}
 
 export default function ProductPage() {
 	const params = useParams();
@@ -45,12 +25,17 @@ export default function ProductPage() {
 			return;
 		}
 
-		async function fetchData() {
+		 function fetchData() {
 			try {
-				const productData = await getProduct(params.id as string);
-				setProduct(productData);
-				const suggestionsData = await getSuggestions(productData.category);
-				setSuggestions(suggestionsData.filter((s) => s.id !== productData.id));
+				const productId = Array.isArray(params.id) ? parseInt(params.id[0], 10) : parseInt(params.id as string, 10);
+				const productData = getProductById(productId);
+				if (productData) {
+					setProduct(productData);
+					const suggestionsData = getProductsByCategory(productData.category);
+					setSuggestions(suggestionsData.filter((s) => s.id !== productData.id));
+				} else {
+					setError("Product not found.");
+				}
 			} catch (error) {
 				console.error("Error fetching data:", error);
 				setError("Failed to load product data.");
