@@ -1,6 +1,5 @@
 import ProductList from "@/components/ProductList"
 import { getProducts } from "@/lib/data"
-import type { Product } from "@/types/product"
 
 
 
