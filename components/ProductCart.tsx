@@ -65,7 +65,19 @@ export const ProductCart: FC<ProductCartProps> = ({ className, children }) => {
 						<div className="animate-[slide_0.2s] fixed top-0 right-0 w-80 h-screen bg-white shadow-xl p-4 z-40 overflow-auto">
 							<h2 className="text-2xl font-bold mb-4 text-gray-800">Cart</h2>
 							<ul className="pb-40">
-								{value?.map((p) => (
+							{value?.length === 0 ? (<>
+							<div className="animate-pulse flex space-x-4">
+								<div className="flex-1 space-y-4 py-1 font-bold text-center text-3xl">
+									Empty
+									<div className="h-4 bg-gray-200 rounded w-3/4"></div>
+									<div className="space-y-2">
+										<div className="h-4 bg-gray-200 rounded"></div>
+										<div className="h-4 bg-gray-200 rounded w-5/6"></div>
+									</div>
+								</div>
+							</div></>
+							) : (
+								value?.map((p) => (
 									<li
 										key={p.product.id}
 										className="flex justify-between items-center mb-2 border-b"
@@ -112,11 +124,12 @@ export const ProductCart: FC<ProductCartProps> = ({ className, children }) => {
 												</span>
 										</p>
 									</li>
-								))}
+								)))}
 							</ul>
 							<div className="fixed bottom-0  w-80 p-4 bg-white  z-[10] ">
-							{value?.length === 0 ? (
-								<div className="text-gray-800">Cart is empty</div>
+							{value?.length === 0 ? (<>
+							
+								<div className="text-gray-800">Cart is empty</div></>
 							) : (
 								<>
 									<div className="text-gray-800">
