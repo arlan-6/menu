@@ -248,6 +248,86 @@ const product: { products: Product[] } = {
             category: "main",
             description: "Breaded eggplant slices topped with marinara sauce and melted mozzarella cheese.",
             ingredients: ["eggplant", "breadcrumbs", "marinara sauce", "mozzarella cheese", "parmesan cheese"]
+        },
+        {
+            id: 31,
+            name: "Beshbarmak",
+            price: 20.99,
+            category: "main",
+            description: "Traditional Kazakh dish with boiled meat and pasta, served with onion sauce.",
+            ingredients: ["meat", "pasta", "onions", "salt", "pepper"]
+        },
+        {
+            id: 32,
+            name: "Kazy",
+            price: 15.99,
+            category: "appetizer",
+            description: "Homemade sausage made from horse meat, a traditional Kazakh delicacy.",
+            ingredients: ["horse meat", "intestine", "salt", "pepper", "garlic"]
+        },
+        {
+            id: 33,
+            name: "Baursak",
+            price: 5.99,
+            category: "dessert",
+            description: "Fried dough balls, often served with tea.",
+            ingredients: ["flour", "milk", "yeast", "sugar", "salt", "oil"]
+        },
+        {
+            id: 34,
+            name: "Shubat",
+            price: 4.99,
+            category: "beverage",
+            description: "Fermented camel milk, a traditional Kazakh drink.",
+            ingredients: ["camel milk"]
+        },
+        {
+            id: 35,
+            name: "Lagman",
+            price: 14.99,
+            category: "main",
+            description: "Noodle dish with meat and vegetables, popular in Central Asia.",
+            ingredients: ["noodles", "beef", "bell peppers", "onions", "tomatoes", "garlic", "soy sauce"]
+        },
+        {
+            id: 36,
+            name: "Plov",
+            price: 13.99,
+            category: "main",
+            description: "Traditional Central Asian rice dish with lamb, carrots, and onions.",
+            ingredients: ["rice", "lamb", "carrots", "onions", "garlic", "cumin"]
+        },
+        {
+            id: 37,
+            name: "Manti",
+            price: 11.99,
+            category: "main",
+            description: "Steamed dumplings filled with minced meat and onions.",
+            ingredients: ["flour", "water", "minced meat", "onions", "salt", "pepper"]
+        },
+        {
+            id: 38,
+            name: "Samsa",
+            price: 9.99,
+            category: "appetizer",
+            description: "Baked pastry filled with minced meat and onions.",
+            ingredients: ["flour", "water", "minced meat", "onions", "salt", "pepper"]
+        },
+        {
+            id: 39,
+            name: "Kumis",
+            price: 4.99,
+            category: "beverage",
+            description: "Fermented mare's milk, a traditional Central Asian drink.",
+            ingredients: ["mare's milk"]
+        },
+        {
+            id: 40,
+            name: "Shashlik",
+            price: 17.99,
+            category: "main",
+            description: "Grilled skewers of marinated meat, served with onions and flatbread.",
+            ingredients: ["meat", "onions", "vinegar", "salt", "pepper", "flatbread"]
         }
     ]
 };
