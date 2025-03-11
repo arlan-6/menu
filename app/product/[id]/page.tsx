@@ -5,7 +5,7 @@ import { useParams, notFound, useRouter } from "next/navigation";
 import Suggestions from "@/components/Suggestions";
 import type { Product } from "@/types/product";
 import { ArrowLeft } from "lucide-react";
-import { useLocalStorage } from "usehooks-ts";
+// import { useLocalStorage } from "usehooks-ts";
 import { getProductById, getProductsByCategory } from "@/lib/data";
 import { createApi } from "unsplash-js";
 import { AddToCartButton } from "@/components/addToCart";
@@ -57,22 +57,22 @@ export default function ProductPage() {
     fetchData();
   }, [params]);
 
-  const [value, setValue] = useLocalStorage<
-    { product: Product; count: number }[]
-  >("cart", []);
-  const handleAddToCart = (product: Product) => {
-    console.log("Added to cart:", product);
-    console.log(" cart:", value);
+  // const [value, setValue] = useLocalStorage<
+  //   { product: Product; count: number }[]
+  // >("cart", []);
+  // const handleAddToCart = (product: Product) => {
+  //   console.log("Added to cart:", product);
+  //   console.log(" cart:", value);
 
-    const cart = value || [];
-    const existingProduct = cart.find((p) => p.product.id === product.id);
-    if (existingProduct) {
-      existingProduct.count += 1;
-    } else {
-      cart.push({ product, count: 1 });
-    }
-    setValue(cart);
-  };
+  //   const cart = value || [];
+  //   const existingProduct = cart.find((p) => p.product.id === product.id);
+  //   if (existingProduct) {
+  //     existingProduct.count += 1;
+  //   } else {
+  //     cart.push({ product, count: 1 });
+  //   }
+  //   setValue(cart);
+  // };
 
   if (loading) {
     return <div>Loading...</div>;

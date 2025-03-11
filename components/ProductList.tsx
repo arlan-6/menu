@@ -3,7 +3,7 @@
 import { useState, useMemo, useCallback } from "react"
 import ProductCard from "@/components/ProductCard"
 import type { Product } from "@/types/product"
-import { useLocalStorage } from "usehooks-ts"
+// import { useLocalStorage } from "usehooks-ts"
 
 interface ProductListProps {
   initialProducts: Product[]
@@ -26,19 +26,19 @@ export default function ProductList({ initialProducts }: ProductListProps) {
     setSearchQuery(e.target.value)
   }, [])
 
-  
-  const [value, setValue] = useLocalStorage<{ product: Product; count: number }[]>("cart", [])
 
-  const handleAddToCart = (product: Product) => {
-    const cart = value || []
-    const existingProduct = cart.find((p) => p.product.id === product.id)
-    if (existingProduct) {
-      existingProduct.count += 1
-    } else {
-      cart.push({ product, count: 1 })
-    }
-    setValue(cart)
-  }
+  // const [value, setValue] = useLocalStorage<{ product: Product; count: number }[]>("cart", [])
+
+  // const handleAddToCart = (product: Product) => {
+  //   const cart = value || []
+  //   const existingProduct = cart.find((p) => p.product.id === product.id)
+  //   if (existingProduct) {
+  //     existingProduct.count += 1
+  //   } else {
+  //     cart.push({ product, count: 1 })
+  //   }
+  //   setValue(cart)
+  // }
 
   const filteredProducts = useMemo(() => {
     let result = [...initialProducts]
@@ -92,7 +92,7 @@ export default function ProductList({ initialProducts }: ProductListProps) {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredProducts.map((product) => (
-          <ProductCard key={product.id} product={product} onAddToCart={handleAddToCart} />
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </div>

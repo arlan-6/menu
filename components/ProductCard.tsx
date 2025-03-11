@@ -11,12 +11,11 @@ const unsplash = createApi({
 
 interface ProductCardProps {
   product: Product
-  onAddToCart: (product: Product) => void
 }
 
 const imageCache: { [key: string]: string } = {}
 
-export default function ProductCard({ product, onAddToCart }: ProductCardProps) {
+export default function ProductCard({ product }: ProductCardProps) {
   const [imageUrl, setImageUrl] = useState("/placeholder.png")
   const isMounted = useRef(false)
 
@@ -48,11 +47,11 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
     }
   }, [product.name])
 
-  const handleAddToCartClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    e.stopPropagation()
-    e.preventDefault()
-    onAddToCart(product)
-  }
+  // const handleAddToCartClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  //   e.stopPropagation()
+  //   e.preventDefault()
+  //   onAddToCart(product)
+  // }
 
   return (
     <div className="relative border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group">
