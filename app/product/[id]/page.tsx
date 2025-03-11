@@ -8,6 +8,7 @@ import { ArrowLeft } from "lucide-react";
 import { useLocalStorage } from "usehooks-ts";
 import { getProductById, getProductsByCategory } from "@/lib/data";
 import { createApi } from "unsplash-js";
+import { AddToCartButton } from "@/components/addToCart";
 
 const unsplash = createApi({
   accessKey: "3L_ey_a9r-9tf9se_sTMpMrfYcz0qjWnzLaHY5s9urA",
@@ -114,12 +115,13 @@ export default function ProductPage() {
                 <li key={index}>{ingredient}</li>
               ))}
             </ul>
-            <button
+            {/* <button
               onClick={() => handleAddToCart(product)}
               className="mt-2 rounded bg-gray-400 text-white p-2 hover:bg-gray-500 transition duration-300"
             >
               Add to Cart
-            </button>
+            </button> */}
+            <AddToCartButton className="p-2" product={product} />
           </div>
           <button
             onClick={() => router.push("/")}

@@ -3,6 +3,7 @@ import Image from "next/image"
 import { useEffect, useState, useRef } from "react"
 import { createApi } from "unsplash-js"
 import type { Product } from "@/types/product"
+import { AddToCartButton } from "./addToCart"
 
 const unsplash = createApi({
   accessKey: "3L_ey_a9r-9tf9se_sTMpMrfYcz0qjWnzLaHY5s9urA",
@@ -66,12 +67,13 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
         <div className="px-4 pt-4 relative">
           <div className="flex justify-between">
             <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
-            <button
+            {/* <button
               onClick={handleAddToCartClick}
               className="rounded bg-gray-400 text-white p-2 hover:bg-gray-500 transition duration-300"
             >
               Add to Cart
-            </button>
+            </button> */}
+            <AddToCartButton product={product} />
           </div>
           <p className="text-gray-600 mb-2">${product.price.toFixed(2)}</p>
         </div>
