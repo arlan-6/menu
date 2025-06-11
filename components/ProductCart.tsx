@@ -12,13 +12,18 @@ interface ProductCartProps {
 }
 
 export const ProductCart: FC<ProductCartProps> = ({ className, children }) => {
-	const [isCartOpen, setCartOpen] = React.useState(true);
+	const [isCartOpen, setCartOpen] = React.useState(false);
+	const [isLoaded, setIsLoaded] = React.useState(false);
+
 	const [value, setValue, removeValue] = useLocalStorage<
 		{ product: Product; count: number }[]
 	>("cart", []);
 	const controls = useAnimation();
 
 	const toggleCart = () => {
+		if (!isLoaded) {
+			setIsLoaded(true);
+		}
 		setCartOpen((prev) => !prev);
 	};
 
@@ -75,7 +80,9 @@ export const ProductCart: FC<ProductCartProps> = ({ className, children }) => {
 						"fixed top-0 -right-10 h-screen bg-white shadow-xl p-4 z-40 overflow-auto  ",
 						isCartOpen
 							? "  animate-slide w-80 right-0"
-							: "  animate-slide_out w-0",
+							: isLoaded
+							? "  animate-slide_out w-0"
+							: "w-0",
 					)}
 				>
 					<h2 className="text-2xl font-bold mb-4 text-gray-800">Cart</h2>
@@ -165,16 +172,18 @@ export const ProductCart: FC<ProductCartProps> = ({ className, children }) => {
 						)}
 					</div>
 				</div>
-				
-					<div
-						className={cn(
-							"top-0 right-0  h-screen bg-white shadow-xl transition-transform duration-200 ",
-							isCartOpen
-								 ? "animate-slide w-80" : "animate-slide_out w-0",
-						)}
-						onClick={toggleCart}
-					/>
-				
+
+				<div
+					className={cn(
+						"top-0 right-0  h-screen bg-white shadow-xl transition-transform duration-200 ",
+						isCartOpen
+							? "animate-slide w-80"
+							: isLoaded
+							? "  animate-slide_out w-0"
+							: "w-0",
+					)}
+					onClick={toggleCart}
+				/>
 			</div>
 		</div>
 	);
