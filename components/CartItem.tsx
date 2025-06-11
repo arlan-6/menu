@@ -1,7 +1,7 @@
 "use client";
 import React, { memo } from "react";
 import { Product } from "@/types/product";
-import { Plus, Minus, Trash2 } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 
 interface CartItemProps {
   item: { product: Product; count: number };
@@ -10,7 +10,7 @@ interface CartItemProps {
 }
 
 // Using React.memo to prevent re-renders if props don't change
-export const CartItem: React.FC<CartItemProps> = memo(({ item, onQuantityChange, onRemove=()=>{} }) => {
+export const CartItem: React.FC<CartItemProps> = memo(({ item, onQuantityChange}) => {
   const { product, count } = item;
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {

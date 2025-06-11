@@ -1,7 +1,7 @@
 "use client";
 import React, { FC, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { ShoppingCart, X, Plus, Minus, Trash2Icon } from "lucide-react";
+import { ShoppingCart, X, Trash2Icon } from "lucide-react";
 import { useLocalStorage } from "usehooks-ts";
 import { Product } from "@/types/product";
 import { motion, useAnimation } from "framer-motion";
@@ -50,15 +50,15 @@ export const ProductCart: FC<ProductCartProps> = ({ className, children }) => {
 		}
 	};
 
-	const handleInputChange = (productId: number, newCount: number) => {
-		const cart = value || [];
-		const index = cart.findIndex((c) => c.product.id === productId);
+	// const handleInputChange = (productId: number, newCount: number) => {
+	// 	const cart = value || [];
+	// 	const index = cart.findIndex((c) => c.product.id === productId);
 
-		if (index > -1) {
-			cart[index].count = newCount;
-			setValue(cart);
-		}
-	};
+	// 	if (index > -1) {
+	// 		cart[index].count = newCount;
+	// 		setValue(cart);
+	// 	}
+	// };
 
 	return (
 		<div className={cn("flex overflow-x-hidden", className)}>

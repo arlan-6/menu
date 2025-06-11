@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { useLocalStorage } from "usehooks-ts";
 import { Product } from "@/types/product";
 import { Minus, Plus, Trash2 } from "lucide-react";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 
 interface AddToCartProps {
   className?: string;
