@@ -12,14 +12,14 @@ const config: Config = {
 		extend: {
 			keyframes: {
 				slide: {
-					"0%": { width: "0" },
+					"0%": { width: "0",right: '-10px' },
 					"60%": { width: "330px" }, // slight overshoot
-					"100%": { width: "320px" }, // settle
+					"100%": { width: "320px",right: '0px' }, // settle
 				},
 				slide_out: {
-					"0%": { width: "320px" },
-					"40%": { width: "330px" }, // slight bump
-					"100%": { width: "0" },
+					"0%": { width: "320px",right: '0px' },
+					"40%": { width: "330px",right: '-10px' }, // slight bump
+					"100%": { width: "0",right: '-10px' },
 				},
 			},
 			animation: {

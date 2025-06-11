@@ -72,9 +72,9 @@ export const ProductCart: FC<ProductCartProps> = ({ className, children }) => {
 				</button>
 				<div
 					className={cn(
-						"fixed top-0 right-0 h-screen bg-white shadow-xl p-4 z-40 overflow-auto  ",
+						"fixed top-0 -right-10 h-screen bg-white shadow-xl p-4 z-40 overflow-auto  ",
 						isCartOpen
-							? "  animate-slide w-80"
+							? "  animate-slide w-80 right-0"
 							: "  animate-slide_out w-0",
 					)}
 				>
