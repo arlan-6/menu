@@ -12,7 +12,7 @@ interface ProductCartProps {
 }
 
 export const ProductCart: FC<ProductCartProps> = ({ className, children }) => {
-	const [isCartOpen, setCartOpen] = React.useState(false);
+	const [isCartOpen, setCartOpen] = React.useState(true);
 	const [value, setValue, removeValue] = useLocalStorage<
 		{ product: Product; count: number }[]
 	>("cart", []);
