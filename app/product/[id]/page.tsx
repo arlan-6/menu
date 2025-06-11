@@ -121,11 +121,11 @@ export default function ProductPage() {
             >
               Add to Cart
             </button> */}
-            <AddToCartButton className="p-2" product={product} />
+            <AddToCartButton className="p-2 mt-4" product={product} />
           </div>
           <button
             onClick={() => router.push("/")}
-            className="flex gap-2 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 transition duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-75"
+            className="flex gap-2 m-4 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 transition duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-75"
           >
             <ArrowLeft className="transition-transform duration-200 group-hover:-translate-x-1" />{" "}
             Home

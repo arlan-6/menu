@@ -13,18 +13,28 @@ const config: Config = {
 			keyframes: {
 				slide: {
 					"0%": { width: "0",right: '-10px' },
-					"60%": { width: "330px" }, // slight overshoot
-					"100%": { width: "320px",right: '0px' }, // settle
+					"60%": { width: "390px" }, // slight overshoot
+					"100%": { width: "384px",right: '0px' }, // settle
 				},
 				slide_out: {
-					"0%": { width: "320px",right: '0px' },
-					"40%": { width: "330px",right: '-10px' }, // slight bump
+					"0%": { width: "384px",right: '0px' },
+					"40%": { width: "390px",right: '-10px' }, // slight bump
 					"100%": { width: "0",right: '-10px' },
+				},
+				fade_in: {
+					"0%": { opacity: "0" },
+					"100%": { opacity: ".2" },
+				},
+				fade_out: {
+					"0%": { opacity: ".2" },
+					"100%": { opacity: "0" },
 				},
 			},
 			animation: {
 				slide: "slide 0.3s ",
 				slide_out: "slide_out 0.3s ",
+				fade_in: "fade_in 0.3s ease-in-out",
+				fade_out: "fade_out 0.3s ease-in-out",
 			},
 			colors: {
 				background: "hsl(var(--background) / <alpha-value>)",
