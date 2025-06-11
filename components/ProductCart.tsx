@@ -175,6 +175,7 @@ export const ProductCart: FC<ProductCartProps> = ({ className, children }) => {
 
 				<div
 					className={cn(
+            'hidden sm:block',
 						"top-0 right-0  h-screen bg-white shadow-xl transition-transform duration-200 ",
 						isCartOpen
 							? "animate-slide w-80"
