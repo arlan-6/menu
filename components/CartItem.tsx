@@ -22,7 +22,7 @@ export const CartItem: React.FC<CartItemProps> = memo(({ item, onQuantityChange}
   };
 
   return (
-    <li className="flex items-center  gap-2 py-3 border-b border-gray-200">
+    <div className="flex items-center  gap-2 py-3 border-b border-gray-200">
       {/* Optional: Add an image */}
       {/* <img src={product.imageUrl} alt={product.name} className="w-16 h-16 rounded-md object-cover" /> */}
       
@@ -66,7 +66,7 @@ export const CartItem: React.FC<CartItemProps> = memo(({ item, onQuantityChange}
       >
         <Trash2 size={20} />
       </button> */}
-    </li>
+    </div>
   );
 });
 

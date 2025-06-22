@@ -62,32 +62,40 @@ export default function ProductList({ initialProducts }: ProductListProps) {
 
   return (
     <div>
-      <div className="mb-4 flex justify-between items-center">
-        <div>
+      <div className="mb-6 flex flex-col gap-4 md:flex-row md:justify-between md:items-center">
+        <div className="flex flex-col gap-2 sm:flex-row">
           <input
-            type="text"
-            value={searchQuery}
-            onChange={handleSearchQueryChange}
-            placeholder="Search by name, category, or description"
-            className="mr-2 p-2 border rounded"
+        type="text"
+        value={searchQuery}
+        onChange={handleSearchQueryChange}
+        placeholder="Search products..."
+        className="p-2 border rounded w-full"
+        aria-label="Search products"
           />
           <select
-            value={categoryFilter}
-            onChange={handleCategoryChange}
-            className="mr-2 p-2 border rounded"
+        value={categoryFilter}
+        onChange={handleCategoryChange}
+        className="p-2 border rounded w-full"
+        aria-label="Filter by category"
           >
-            <option value="all">All Categories</option>
-            <option value="appetizer">Appetizers</option>
-            <option value="main">Main Courses</option>
-            <option value="dessert">Desserts</option>
+        <option value="all">All Categories</option>
+        <option value="appetizer">Appetizers</option>
+        <option value="main">Main Courses</option>
+        <option value="dessert">Desserts</option>
           </select>
-          <select value={sortOrder} onChange={handleSortOrderChange} className="p-2 border rounded">
-            <option value="name">Sort by Name</option>
-            <option value="price">Sort by Price</option>
+          <select
+        value={sortOrder}
+        onChange={handleSortOrderChange}
+        className="p-2 border rounded w-full"
+        aria-label="Sort products"
+          >
+        <option value="name">Sort by Name</option>
+        <option value="price">Sort by Price</option>
           </select>
         </div>
-        <div className="text-gray-700">
-          {filteredProducts.length} {filteredProducts.length === 1 ? "product" : "products"} found
+        <div className="text-gray-700 text-sm text-right">
+          <span className="font-semibold">{filteredProducts.length}</span>{" "}
+          {filteredProducts.length === 1 ? "product" : "products"} found
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
