@@ -328,6 +328,166 @@ const product: { products: Product[] } = {
             category: "main",
             description: "Grilled skewers of marinated meat, served with onions and flatbread.",
             ingredients: ["meat", "onions", "vinegar", "salt", "pepper", "flatbread"]
+        },
+        {
+            id: 41,
+            name: "Pepperoni Pizza",
+            price: 15.99,
+            category: "main",
+            description: "Classic pizza topped with pepperoni slices and mozzarella cheese.",
+            ingredients: ["pizza dough", "tomato sauce", "mozzarella cheese", "pepperoni"]
+        },
+        {
+            id: 42,
+            name: "Chicken Tikka Masala",
+            price: 16.99,
+            category: "main",
+            description: "Grilled chicken pieces in a creamy spiced tomato sauce, served with rice.",
+            ingredients: ["chicken", "yogurt", "tomato sauce", "cream", "spices", "rice"]
+        },
+        {
+            id: 43,
+            name: "Pad Thai",
+            price: 13.99,
+            category: "main",
+            description: "Stir-fried rice noodles with shrimp, tofu, peanuts, and bean sprouts.",
+            ingredients: ["rice noodles", "shrimp", "tofu", "peanuts", "bean sprouts", "egg", "tamarind sauce"]
+        },
+        {
+            id: 44,
+            name: "Hamburger",
+            price: 12.99,
+            category: "main",
+            description: "Juicy beef patty with lettuce, tomato, onion, and cheese on a toasted bun.",
+            ingredients: ["beef patty", "bun", "lettuce", "tomato", "onion", "cheese"]
+        },
+        {
+            id: 45,
+            name: "Sushi Platter",
+            price: 19.99,
+            category: "main",
+            description: "Assorted sushi rolls with fresh fish, rice, and vegetables.",
+            ingredients: ["sushi rice", "nori", "salmon", "tuna", "avocado", "cucumber"]
+        },
+        {
+            id: 46,
+            name: "Pho",
+            price: 14.99,
+            category: "main",
+            description: "Vietnamese noodle soup with beef, herbs, and rice noodles.",
+            ingredients: ["beef broth", "rice noodles", "beef", "herbs", "onions", "bean sprouts"]
+        },
+        {
+            id: 47,
+            name: "Falafel Wrap",
+            price: 10.99,
+            category: "main",
+            description: "Crispy falafel balls wrapped in pita with lettuce, tomato, and tahini sauce.",
+            ingredients: ["falafel", "pita bread", "lettuce", "tomato", "tahini sauce"]
+        },
+        {
+            id: 48,
+            name: "Ramen",
+            price: 13.99,
+            category: "main",
+            description: "Japanese noodle soup with pork, egg, and vegetables.",
+            ingredients: ["ramen noodles", "pork", "egg", "broth", "scallions", "nori"]
+        },
+        {
+            id: 49,
+            name: "Fish Tacos",
+            price: 12.99,
+            category: "main",
+            description: "Grilled fish in soft tortillas with cabbage slaw and creamy sauce.",
+            ingredients: ["fish", "tortillas", "cabbage", "lime", "sour cream", "cilantro"]
+        },
+        {
+            id: 50,
+            name: "Eggs Benedict",
+            price: 11.99,
+            category: "main",
+            description: "Poached eggs and ham on English muffins, topped with hollandaise sauce.",
+            ingredients: ["eggs", "ham", "English muffin", "hollandaise sauce"]
+        },
+        {
+            id: 51,
+            name: "French Toast",
+            price: 8.99,
+            category: "dessert",
+            description: "Bread soaked in egg mixture, fried and served with syrup.",
+            ingredients: ["bread", "eggs", "milk", "cinnamon", "syrup"]
+        },
+        {
+            id: 52,
+            name: "Peking Duck",
+            price: 24.99,
+            category: "main",
+            description: "Crispy roasted duck served with pancakes, scallions, and hoisin sauce.",
+            ingredients: ["duck", "pancakes", "scallions", "hoisin sauce"]
+        },
+        {
+            id: 53,
+            name: "Goulash",
+            price: 13.99,
+            category: "main",
+            description: "Hungarian stew with beef, paprika, and vegetables.",
+            ingredients: ["beef", "paprika", "onions", "potatoes", "carrots"]
+        },
+        {
+            id: 54,
+            name: "Paella",
+            price: 18.99,
+            category: "main",
+            description: "Spanish rice dish with seafood, chicken, and vegetables.",
+            ingredients: ["rice", "shrimp", "mussels", "chicken", "peas", "saffron"]
+        },
+        {
+            id: 55,
+            name: "Croissant",
+            price: 3.99,
+            category: "dessert",
+            description: "Flaky French pastry, perfect for breakfast or dessert.",
+            ingredients: ["flour", "butter", "yeast", "milk", "sugar"]
+        },
+        {
+            id: 56,
+            name: "Tom Yum Soup",
+            price: 10.99,
+            category: "appetizer",
+            description: "Spicy Thai soup with shrimp, mushrooms, and lemongrass.",
+            ingredients: ["shrimp", "mushrooms", "lemongrass", "lime", "chilies"]
+        },
+        {
+            id: 57,
+            name: "Baklava",
+            price: 6.99,
+            category: "dessert",
+            description: "Sweet pastry with layers of filo, nuts, and honey syrup.",
+            ingredients: ["filo pastry", "nuts", "honey", "sugar", "butter"]
+        },
+        {
+            id: 58,
+            name: "Clam Chowder",
+            price: 9.99,
+            category: "appetizer",
+            description: "Creamy soup with clams, potatoes, and celery.",
+            ingredients: ["clams", "potatoes", "celery", "cream", "onions"]
+        },
+        {
+            id: 59,
+            name: "Chicken Shawarma",
+            price: 12.99,
+            category: "main",
+            description: "Spiced grilled chicken wrapped in pita with garlic sauce.",
+            ingredients: ["chicken", "spices", "pita bread", "garlic sauce", "lettuce", "tomato"]
+        },
+        {
+            id: 60,
+            name: "Vegetable Curry",
+            price: 11.99,
+            category: "main",
+            description: "Mixed vegetables cooked in a fragrant curry sauce, served with rice.",
+            ingredients: ["mixed vegetables", "curry sauce", "rice", "spices"]
         }
     ]
 };

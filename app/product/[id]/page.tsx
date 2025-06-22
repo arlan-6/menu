@@ -26,7 +26,6 @@ export default function ProductPage() {
   useEffect(() => {
     if (!params || !params.id) {
       notFound();
-      return;
     }
 
     async function fetchData() {
@@ -36,13 +35,20 @@ export default function ProductPage() {
         if (productData) {
           setProduct(productData);
           const suggestionsData = getProductsByCategory(productData.category);
-          setSuggestions(suggestionsData.filter((s) => s.id !== productData.id));
+            // Get up to 3 random suggestions, excluding the current product
+            const filtered = suggestionsData.filter((s) => s.id !== productData.id);
+            const shuffled = filtered.sort(() => 0.5 - Math.random());
+            setSuggestions(shuffled.slice(0, 3));
 
           // Fetch image from Unsplash
-          const result = await unsplash.search.getPhotos({ query: productData.name, perPage: 1 });
-          if (result.response && result.response.results.length > 0) {
-            setImageUrl(result.response.results[0].urls.small);
-          }
+            try {
+            const result = await unsplash.search.getPhotos({ query: productData.name, perPage: 1 });
+            if (result.response && result.response.results.length > 0) {
+              setImageUrl(result.response.results[0].urls.small);
+            }
+            } catch (err) {
+            console.error("Error fetching image from Unsplash:", err);
+            }
         } else {
           setError("Product not found.");
         }

@@ -48,9 +48,13 @@ export const ProductCart: FC<ProductCartProps> = ({ className, children }) => {
 				cart[index].count = 99;
 				toast.error('Maximum quantity is 99',{duration: 1000});
 			}
+			// else if (newCount >1) {
+			// 	cart[index].count = 1;
+			// } 
 			else {
 				cart.splice(index, 1);
 			}
+			
 			setValue(cart);
 		}
 	};
