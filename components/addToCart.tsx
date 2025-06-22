@@ -5,6 +5,7 @@ import { useLocalStorage } from "usehooks-ts";
 import { Product } from "@/types/product";
 import { Minus, Plus, Trash2 } from "lucide-react";
 import { motion } from "framer-motion";
+import { toast } from "sonner";
 
 interface AddToCartProps {
   className?: string;
@@ -34,13 +35,19 @@ export const AddToCartButton: FC<AddToCartProps> = ({ className, product }) => {
     e.stopPropagation();
     e.preventDefault();
     
-    if (newCount > 0) {
+    if (newCount > 0 && newCount < 99) {
       // 2. IMMUTABLE UPDATE: Create a new array using .map()
       const updatedCart = cartItems.map((item) =>
         item.product.id === product.id ? { ...item, count: newCount } : item
       );
       setCartItems(updatedCart);
-    } else {
+    } else if( newCount >= 99) {
+      const updatedCart = cartItems.map((item) =>
+        item.product.id === product.id ? { ...item, count: 99 } : item
+      );
+      setCartItems(updatedCart);
+				toast.error('Maximum quantity is 99',{duration: 1000});
+			}else {
       // 2. IMMUTABLE UPDATE: Create a new array using .filter()
       const updatedCart = cartItems.filter(
         (item) => item.product.id !== product.id

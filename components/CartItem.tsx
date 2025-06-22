@@ -16,8 +16,10 @@ export const CartItem: React.FC<CartItemProps> = memo(({ item, onQuantityChange}
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newCount = parseInt(e.target.value, 10);
     // Basic validation: If it's not a number or less than 1, don't update (or default to 1)
-    if (!isNaN(newCount) && newCount >= 1) {
+    if (!isNaN(newCount) && newCount >= 1 && newCount <= 99) {
       onQuantityChange(product.id, newCount);
+    }else if (newCount >= 99){
+      onQuantityChange(product.id, 99);
     }
   };
 
@@ -42,6 +44,7 @@ export const CartItem: React.FC<CartItemProps> = memo(({ item, onQuantityChange}
         <input
           type="number"
           value={count}
+          max={99}
           onChange={handleInputChange}
           className="w-12 text-center border rounded-md"
           aria-label={`Quantity for ${product.name}`}

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ProductCart } from "@/components/ProductCart";
 import { Analytics } from "@vercel/analytics/react";
+import { Toaster } from 'sonner'
 const geistSans = Geist({
 	variable: "--font-geist-sans",
 	subsets: ["latin"],
@@ -29,6 +30,7 @@ export default function RootLayout({
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
 				<Analytics />
+				<Toaster richColors  visibleToasts={1}/>
 				<ProductCart>{children}</ProductCart>
 			</body>
 		</html>

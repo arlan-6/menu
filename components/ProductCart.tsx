@@ -6,6 +6,7 @@ import { useLocalStorage } from "usehooks-ts";
 import { Product } from "@/types/product";
 import { motion, useAnimation } from "framer-motion";
 import { CartItem } from "./CartItem";
+import { toast } from "sonner";
 
 interface ProductCartProps {
 	className?: string;
@@ -41,9 +42,13 @@ export const ProductCart: FC<ProductCartProps> = ({ className, children }) => {
 		const cart = value || [];
 		const index = cart.findIndex((c) => c.product.id === productId);
 		if (index > -1) {
-			if (newCount > 0) {
+			if (newCount > 0 && newCount < 99) {
 				cart[index].count = newCount;
-			} else {
+			} else if( newCount >= 99) {
+				cart[index].count = 99;
+				toast.error('Maximum quantity is 99',{duration: 1000});
+			}
+			else {
 				cart.splice(index, 1);
 			}
 			setValue(cart);
